@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrashTracker.Views.HistoryPage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Kaikkien jätteiden määrä kilogrammoissa" FontSize="Large" HorizontalOptions="Center"/>
+            <Label Text="{Binding Mixed}"/>
+            <Label Text="{Binding Metal}"/>
+            <Label Text="{Binding Glass}"/>
+            <Label Text="{Binding Plastic}"/>
+            <Label Text="{Binding Paper}"/>
+            <Label Text="{Binding Cardboard}"/>
+            <Button Text="Päivitä" Clicked="Refresh"></Button>
+            <Button Text="Näytä kaikki lisäykset" Clicked="ShowAll"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

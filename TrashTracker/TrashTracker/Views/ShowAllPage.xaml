@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrashTracker.Views.ShowAllPage"
+             Title="Kaikki lisäykset">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding AllTrash}" EmptyView="Ei kirjauksia näytettävänä">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" VerticalItemSpacing="20"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,Auto">
+                            <Label Grid.Row="0" Grid.Column="0" Text="Päiväys: " FontAttributes="Bold"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding DateTime}"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Roskatyyppi: " FontAttributes="Bold"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Type}"/>
+                            <Label Grid.Row="2" Grid.Column="0" Text="Paino (g): " FontAttributes="Bold"/>
+                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding Weight}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

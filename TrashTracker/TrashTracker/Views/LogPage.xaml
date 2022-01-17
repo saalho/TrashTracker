@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrashTracker.Views.LogPage"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <StackLayout RadioButtonGroup.GroupName="unitGroup" RadioButtonGroup.SelectedValue="{Binding UnitValue}">
+            <Label Text="Kirjaa tuotettu jäte" FontSize="Large" HorizontalOptions="Center"/>
+            <Grid RowDefinitions="Auto" ColumnDefinitions="Auto, *, Auto, Auto">
+                <Picker x:Name="typePicker" Grid.Column="0" Title="Valitse jätetyyppi" SelectedIndexChanged="TypePickChanged" ItemsSource="{Binding TrashTypes}" ItemDisplayBinding="{Binding Name}"/>
+                <Entry x:Name="weigthEntry" Grid.Column="1" Keyboard="Numeric" TextChanged="WeightChanged" Placeholder="Paino"/>
+                <RadioButton Grid.Column="2" Content="g" Value="1" IsChecked="True"/>
+                <RadioButton Grid.Column="3" Content="kg" Value="1000"/>
+            </Grid>
+            <Button Text="Lisää" Clicked="AddClick"/>
+            <Label Text="Tuotettu jäte kirjataan ylös painon mukaan, joko grammoina tai kilogrammoina. Jätteen painon voi laittaa arviona tai tarkempaa mittausta halutessa punnittuna."/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
